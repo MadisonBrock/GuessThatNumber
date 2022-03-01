@@ -47,6 +47,14 @@ while (restartGame){
 
   // Continues looping until the user guesses the correct number or runs out of attempts (NOTE: Loops until a BREAK keyword is run)
   while (true){
+
+    // Displays the number when a code word is entered
+    if (guess === `Mads`){
+        alert(`The number is ${rangeNum}`)
+        // 
+        guess = prompt(`Please enter a guess from 1 to ${rangeNum}. You have ${attempts} attempt(s) left:`)
+    }
+
     // Tries to convert the user's guess into a number
     guess = parseInt(guess);
 
@@ -78,7 +86,7 @@ while (restartGame){
     }
 
     // break;
-  }
+}
 
     // Prompts user with options to play again
     playAgain = prompt (`Would you like to play again? Y for yes. N for no.`)
@@ -99,8 +107,8 @@ while (restartGame){
         else{
             playAgain = prompt (`Please enter Y or N.`)
         }
-        break
+        // break
     }
 
-  break;
+//   break;
 }
