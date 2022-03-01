@@ -1,6 +1,6 @@
 // GUESS THAT NUMBER
 // Message to be used throughout the project/file
-const enterNumText = `Please enter a number greater then zero`; 
+const enterNumText = `Please enter a number greater then zero.`; 
 // For restarting the game
 let restartGame = true
 // For storing the number that the user will guess
@@ -13,7 +13,7 @@ let guess;
 let playAgain
 
 // Starting Alert message here
-alert(`Welcome to "Guess That Number!" Please click "OK" to start the game`)
+alert(`Welcome to "Guess That Number!" Please click "OK" to start the game.`)
 
 // Game restarts as long as the restart game variable has a value of true
 while (restartGame){
@@ -31,6 +31,15 @@ while (restartGame){
 
     // Creates the random number using the range number entered by the user
     rangeNum = Math.floor( Math.random() * rangeNum) + 1
+
+    // Prompts user to enter number of attempts allowed
+    attempts = parseInt (prompt(`Please enter a number of attempts allowed:`))
+
+    // Verifying the users entry for a number of attempts allowed is a number greater then zero and less then the range they set
+    while(!attempts || attempts < 1 || attempts >= rangeNum ){
+        attempts = parseInt (prompt(`Please enter a number from 1 tp ${rangeNum - 1}:`))
+
+    }
 
 
     break;
